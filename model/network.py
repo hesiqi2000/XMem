@@ -99,6 +99,7 @@ class XMem(nn.Module):
         memory_value = memory_value.flatten(start_dim=1, end_dim=2)
 
         affinity = get_affinity(memory_key, memory_shrinkage, query_key, query_selection)
+        print(query_key.shape)
         memory = readout(affinity, memory_value)
         memory = memory.view(batch_size, num_objects, self.value_dim, *memory.shape[-2:])
 
