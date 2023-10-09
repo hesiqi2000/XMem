@@ -41,6 +41,7 @@ class XMem(nn.Module):
         # Determine input shape
         if len(frame.shape) == 5:
             # shape is b*t*c*h*w
+            print(frame.shape)
             need_reshape = True
             b, t = frame.shape[:2]
             # flatten so that we can feed them into a 2D CNN
